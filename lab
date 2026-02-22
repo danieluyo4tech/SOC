@@ -1,0 +1,311 @@
+SOC 101 – Requirements and Learning Resources
+
+This document outlines all software, tools, and external resources required for setting up your SOC 101 lab environment and completing course activities.
+
+Course Repository and Bookmark Resources
+
+Primary Course Repository:
+https://github.com/MalwareCube/SOC101_Free
+
+SOC Tools Bookmark File:
+https://github.com/MalwareCube/SOC101_Free/blob/main/resources/bookmarks/soc_bookmarks.html
+
+Importing the Bookmark File into Your Browser
+
+Google Chrome:
+https://support.google.com/chrome/answer/96816?hl=en
+
+Mozilla Firefox:
+https://support.mozilla.org/en-US/kb/import-bookmarks-html-file
+
+Microsoft Edge:
+https://consumer.huawei.com/en/support/content/en-us15879281/
+
+Safari (Mac):
+https://support.apple.com/en-ca/guide/safari/ibrw1015/mac
+
+Virtualization Setup
+
+To safely perform security testing and malware analysis, we will use virtualization software.
+
+Download Oracle VM VirtualBox here:
+https://www.virtualbox.org/wiki/Downloads
+
+VirtualBox installation guide (Mac):
+https://cs.hofstra.edu/docs/pages/guides/vbox_mac.html
+
+VirtualBox installation guide (Linux/Ubuntu):
+https://phoenixnap.com/kb/install-virtualbox-on-ubuntu
+
+Microsoft Visual C++ Redistributable (if required):
+https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist
+
+Windows Virtual Machine Installation
+
+Download Windows 10 Enterprise Evaluation:
+https://www.microsoft.com/en-us/evalcenter/download-windows-10-enterprise
+
+Install Git (required for cloning repositories):
+https://git-scm.com/
+
+Course Repository (clone after installing Git):
+https://github.com/MalwareCube/SOC101_Free
+
+Windows Lab Configuration (For Controlled Lab Use Only)
+
+Disable Real-Time Monitoring:
+
+Set-MpPreference -DisableRealtimeMonitoring $true
+
+Disable Network File Scanning:
+
+Set-MpPreference -DisableScanningNetworkFiles $true
+
+Disable First-Seen Blocking:
+
+Set-MpPreference -DisableBlockAtFirstSeen $true
+
+Disable Windows Defender AntiSpyware:
+
+reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware /t REG_DWORD /d 1 /f
+
+Clone the course repository:
+
+git clone https://github.com/MalwareCube/SOC101_Free.git
+Ubuntu Virtual Machine Installation
+
+Download Latest Ubuntu Desktop:
+https://ubuntu.com/download/desktop
+
+Download Previous Ubuntu Versions:
+https://releases.ubuntu.com/
+
+Ubuntu System Preparation
+
+Update system packages:
+
+sudo apt update
+
+Install required dependencies:
+
+sudo apt install bzip2 tar gcc make perl git
+
+Install generic kernel headers:
+
+sudo apt install linux-headers-generic
+
+Install system-specific kernel headers:
+
+sudo apt install linux-headers-$(uname -r)
+
+Ensure Git is installed:
+
+sudo apt install git
+
+Clone the repository:
+
+git clone https://github.com/MalwareCube/SOC101_Free.git
+
+Make installation script executable:
+
+chmod +x ./install.sh
+
+Run the installation script:
+
+./install.sh
+Threat Intelligence Resources
+
+CrowdStrike Adversary Intelligence:
+https://crowdstrike.com/adversaries/
+
+Mandiant APT Groups Research:
+https://mandiant.com/resources/insights/apt-groups
+
+MITRE ATT&CK Groups Database:
+https://attack.mitre.org/groups/
+
+Phishing Case Studies
+
+Colonial Pipeline Phishing Report:
+https://abnormalsecurity.com/blog/colonial-pipeline-attack-phishing-email-likely-the-culprit
+
+Hedge Fund BEC Incident:
+https://www.secureworld.io/industry-news/hedge-fund-closes-after-bec-cyber-attac
+
+Ubiquiti Cyberheist Case:
+https://krebsonsecurity.com/2015/08/tech-firm-ubiquiti-suffers-46m-cyberheist/
+
+Ukraine Power Grid Cyberattack:
+https://en.wikipedia.org/wiki/2015_Ukraine_power_grid_hack
+
+Phishing Analysis Tools
+
+Sublime Text Editor:
+https://www.sublimetext.com/
+
+Linux Installation Instructions:
+https://www.sublimetext.com/docs/linux_repositories.html
+
+URL Shortener (used in phishing simulations):
+https://bitly.com
+
+URL Expansion Tool:
+https://unshorten.it
+
+Homoglyph Attack Generator:
+https://www.irongeek.com/homoglyph-attack-generator.php
+
+DNSTwist (GitHub):
+https://github.com/elceef/dnstwist
+
+DNSTwist Online:
+https://dnstwist.it/
+
+DNSTwister Report Tool:
+https://dnstwister.report/
+
+PhishTank Database:
+https://phishtank.org/
+
+Email Header and Sender Investigation
+
+Sublime Email Header Plugin:
+https://packagecontrol.io/packages/Email%20Header
+
+Email Header Analyzer (GitHub):
+https://github.com/13Cubed/EmailHeader
+
+IANA Message Header Registry:
+https://www.iana.org/assignments/message-headers/message-headers.xhtml
+
+WHOIS Lookup:
+https://whois.domaintools.com/
+
+Microsoft Message Header Analyzer:
+https://mha.azurewebsites.net/
+
+https://github.com/microsoft/MHA
+
+MXToolbox Header Analyzer:
+https://mxtoolbox.com/EmailHeaders.aspx
+
+Email Content and URL Investigation
+
+CyberChef:
+https://gchq.github.io/CyberChef/
+
+Email IOC Extractor:
+https://github.com/MalwareCube/Email-IOC-Extractor
+
+URL Screenshot Tool:
+https://www.url2png.com/
+
+URLScan:
+https://urlscan.io/
+
+VirusTotal:
+https://www.virustotal.com/gui/home/upload
+
+URLVoid:
+https://www.urlvoid.com/
+
+Wannabrowser:
+https://www.wannabrowser.net/
+
+URLHaus:
+https://urlhaus.abuse.ch/
+
+Google Safe Browsing Transparency Report:
+https://transparencyreport.google.com/safe-browsing/search
+
+Joe Sandbox:
+https://www.joesandbox.com/
+
+Attachment and Malware Analysis
+
+emldump.py:
+https://github.com/DidierStevens/DidierStevensSuite/blob/master/emldump.py
+
+Talos Intelligence:
+https://talosintelligence.com/
+
+Hybrid Analysis:
+https://hybrid-analysis.com/
+
+ANY.RUN Sandbox:
+https://app.any.run
+
+oledump.py:
+https://github.com/DidierStevens/DidierStevensSuite/blob/master/oledump.py
+
+pdf-parser.py:
+https://github.com/DidierStevens/DidierStevensSuite/blob/master/pdf-parser.py
+
+pdfid.py:
+https://github.com/DidierStevens/DidierStevensSuite/blob/master/pdfid.py
+
+PhishTool:
+https://www.phishtool.com/
+
+Wireshark Installation and Resources
+
+Official Website:
+https://wireshark.org
+
+Install on Ubuntu:
+
+sudo add-apt-repository ppa:wireshark-dev/stable
+sudo apt update
+sudo apt install wireshark
+
+Capture Filters Documentation:
+https://wiki.wireshark.org/CaptureFilters
+
+https://www.wireshark.org/docs/wsug_html_chunked/ChCapCaptureFilterSection
+
+Display Filters Documentation:
+https://wiki.wireshark.org/DisplayFilters
+
+https://www.wireshark.org/docs/wsug_html_chunked/ChWorkBuildDisplayFilterSection.html
+
+Practice Traffic Samples:
+https://www.malware-traffic-analysis.net/
+
+https://unit42.paloaltonetworks.com/feb-wireshark-quiz-answers/
+
+https://attack.mitre.org/software/S0650/
+
+Snort IDS
+
+Official Website:
+https://snort.org/
+
+Snort Rule Downloads:
+https://snort.org/downloads#rule-downloads
+
+Snorpy Rule Generator:
+http://snorpy.cyb3rs3c.net/
+
+Alternative: https://anir0y.in/snort2-rulgen/
+
+Additional Practice PCAP Resources
+
+https://chrissanders.org/packet-captures/
+
+https://github.com/chrissanders/packets
+
+https://wiki.wireshark.org/SampleCaptures
+
+https://www.netresec.com/?page=PcapFiles
+
+https://github.com/zeek/zeek/tree/master/testing/btest/Traces
+
+https://docs.securityonion.net/en/2.4/pcaps.html
+
+Malware Development Lab
+
+Metasploit Installation Guide:
+https://docs.rapid7.com/metasploit/installing-the-metasploit-framework/
+
+Metasploit Omnibus Installer:
+https://github.com/rapid7/metasploit-omnibus
